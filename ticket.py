@@ -1,0 +1,74 @@
+ALLOWED_CATEGORIES = ["Network", "Hardware", "Software", "Other"]
+
+def calculate_priority(urgency,affected_users):
+    if urgency == "high" and affected_users >= 10:
+        return "critical"
+    elif urgency == "high" or affected_users >= 10 :
+        return "high"
+    elif urgency == "medium" or affected_users >= 3:
+         return "medium"
+    else:
+        return "low"
+ALLOWED_URGENCIES = ["low","medium","high"]
+def ticket(ticket_id, title, category, urgency, affected_users):
+    title = title.strip()
+    category = category.strip().capitalize()
+    urgency = urgency.strip().lower()
+    if title == "":
+        raise ValueError("Title cannot be blank")
+    if category not in ALLOWED_CATEGORIES:
+        raise ValueError("Invalid category")
+    if urgency not in ALLOWED_URGENCIES:
+        raise ValueError("invalid urgency")
+
+    if(
+        not isinstance (affected_users,int)
+        or isinstance (affected_users, bool)
+        or affected_users <= 0
+    ):
+
+        raise ValueError("Affected users must be a positive whole number")
+        
+    priority = calculate_priority(urgency,affected_users)
+
+
+    fellow = {
+        "id": ticket_id,
+        "title": title,
+        "affected_users": affected_users,
+        "category": category,
+        "urgency": urgency,
+        "status": "open",
+        "assigned_to": None,
+        "priority": priority
+    }
+    return fellow
+def next_id(tickets):
+    number = len(tickets) + 1
+    return f"T{number:03}"
+def create_ticket(tickets,title,category,urgency,affected_users):
+    new_id = next_id(tickets)
+    new = ticket(new_id,title,category,urgency,affected_users)
+    tickets.append(new)
+    return new
+def create_ticket_from_input(tickets):
+    title = input("Title: ")
+    category = input("Category (Network/Hardware/Software/Other): ")
+    urgency = input("Urgency (low/medium/high): ")
+    users_text = input("Affected users: ")
+    try:
+        affected_users = int(users_text)
+        new = create_ticket(tickets, title, category, urgency, affected_users)
+        print("Created", new["id"], "- priority:", new["priority"])
+    except ValueError as error:
+        print("Error:", error)
+
+
+if __name__ == "__main__":
+    tickets = []
+    while True:
+        create_ticket_from_input(tickets)
+        again = input("Create another? (y/n): ")
+        if again.strip().lower() != "y":
+            break
+    print("Tickets created:", len(tickets))
