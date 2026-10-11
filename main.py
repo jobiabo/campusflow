@@ -1,6 +1,6 @@
 from storage import list_and_view
 from report import tickets_report
-from workflow import changestatus
+from workflow import change_status
 from ticket import main_main
 
 
@@ -25,7 +25,7 @@ def main():
         elif user_select == "F3":
             print("Assignment feature is not implemented yet.")
         elif user_select == "F4":
-            changestatus()
+            change_status()
         elif user_select == "F5":
             print("Work queue feature is not implemented yet.")
         elif user_select == "F6":
