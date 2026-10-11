@@ -1,7 +1,7 @@
 import json
 
 
-def report():
+def tickets_report():
     
     open_tickets = 0
     in_progress_ticket = 0
