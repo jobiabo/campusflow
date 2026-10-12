@@ -1,28 +1,18 @@
 [
     {
         "id": "T001",
-        "title": "laptop",
-        "affected_users": 12,
-        "category": "Hardware",
+        "title": "wifi",
+        "affected_users": 2,
+        "category": "Network",
         "urgency": "low",
         "status": "open",
         "assigned_to": null,
-        "priority": "high"
+        "priority": "low"
     },
     {
         "id": "T002",
-        "title": "wifi",
-        "affected_users": 34,
-        "category": "Software",
-        "urgency": "low",
-        "status": "open",
-        "assigned_to": null,
-        "priority": "high"
-    },
-    {
-        "id": "T003",
         "title": "laptop",
-        "affected_users": 6,
+        "affected_users": 3,
         "category": "Hardware",
         "urgency": "low",
         "status": "open",

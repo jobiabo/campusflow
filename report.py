@@ -13,7 +13,7 @@ def tickets_report():
     critical_priority = 0
 
 
-    with open("ticketstore.json", "r") as file:
+    with open("tickets.json", "r") as file:
         tickets = json.load(file)
         print("Total Tickets Logged:",len(tickets))
         # print(tickets)
