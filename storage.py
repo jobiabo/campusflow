@@ -1,7 +1,7 @@
 import json
 
 def list_and_view():
-    with open("ticketstore.json", "r") as file:
+    with open("tickets.json", "r") as file:
         tickets = json.load(file)
         
     print("===================================")
@@ -22,7 +22,7 @@ def list_and_view():
         # print(checkticket, "and seen", ticketDetails )
         if checkticket == ticketDetails["id"]:
             print("Found")
-            return ticketDetails
+            print(ticketDetails)
         
 
     
