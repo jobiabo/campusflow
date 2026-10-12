@@ -8,15 +8,5 @@
         "status": "open",
         "assigned_to": null,
         "priority": "low"
-    },
-    {
-        "id": "T002",
-        "title": "laptop",
-        "affected_users": 3,
-        "category": "Hardware",
-        "urgency": "low",
-        "status": "open",
-        "assigned_to": null,
-        "priority": "medium"
     }
 ]
