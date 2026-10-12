@@ -18,7 +18,7 @@ Useful AI guidance: <Python cannot import names with hyphens (work-flow.py). Run
 My independent experiment/test: <I renamed the files with underscores and ran python3 -m unittest test_workflow -v.>
 Verification source or result: <The ModuleNotFoundError disappeared and the test ran.>
 Decision: <Accepted and applied.>
-Related file/commit: <workflow.py, test_workflow.py. Commit SHA: not recorded yet.>
+Related file/commit: <workflow.py, test_workflow.py. Commit SHA: 75d014f124da60039ab06558eeba78d2962ae5f0.>
 What I can now explain without AI: <Import names cannot contain hyphens, and -m unittest starts the test runner.>
 
 ### Interaction #3 — <Validate before changing data (change_status)>
