@@ -17,3 +17,28 @@ def change_status(tickets, ticket_id,new_status):
         raise ValueError("Ticket must be assigned first")
     found["status"] = new_status
     return found
+
+def Assign_ticket(tickets, ticket_id,staff_name):
+    found = None
+    for ticket in tickets:
+        if ticket["id"] == ticket_id:
+            found = ticket
+            break
+    if found is None:
+        raise ValueError("unknown ticket....")
+    if isinstance(staff_name, str) or not staff_name.strip():
+
+        raise ValueError ("staff name cannot be blank")
+
+    if found["status"] == "resolved":
+
+        raise ValueError("Resolved ticket cannot be assigned until it is reopened")
+
+        found["assigned_to"] = staff_name.strip()
+
+    return found
+
+
+def open_work_queue(tickets):
+    open_tickets = [t for t in tickets if t["status"] == "open"]
+    return sorted(open_tickets, key=ticket_sort_key)

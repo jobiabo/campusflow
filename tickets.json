@@ -8,5 +8,15 @@
         "status": "open",
         "assigned_to": null,
         "priority": "low"
+    },
+    {
+        "id": "T002",
+        "title": "wifi",
+        "affected_users": 2,
+        "category": "Network",
+        "urgency": "low",
+        "status": "open",
+        "assigned_to": null,
+        "priority": "low"
     }
 ]
