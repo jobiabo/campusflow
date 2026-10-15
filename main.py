@@ -46,7 +46,7 @@ import json
 
 from storage import list_and_view
 from report import tickets_report
-from workflow import change_status, Assign_ticket, open_work_queue
+from workflow import change_status, assign_ticket, open_work_queue
 from ticket import main_main
 
 DATA_FILE = "tickets.json"
@@ -81,7 +81,7 @@ def Assign_from_input():
     ticket_id = input("Ticket ID to assign: ").strip().upper()
     staff_name = input("Assign to (staff name): ")
     try:
-        Assign_ticket(tickets, ticket_id, staff_name)
+        assign_ticket(tickets, ticket_id, staff_name)
     except ValueError as error:
         print(f"Could not assign: {error}")
         return
