@@ -4,3 +4,4 @@ __pycache__/
 .env
 tickets.json
 data/tickets.json
+*.py[cod]
